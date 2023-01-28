@@ -1,7 +1,7 @@
 from  selenium.webdriver.common.by import By
 
-class MainPageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
+# class MainPageLocators:
+#     LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
 
 class LogonPageLocators:
     REGISTER_EMAIL = (By.CSS_SELECTOR, "#id_registration-email")
@@ -21,3 +21,5 @@ class ProductPageLocators:
 class BasePageLocator:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+

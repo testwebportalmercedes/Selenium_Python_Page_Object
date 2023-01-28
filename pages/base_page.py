@@ -1,5 +1,6 @@
 from selenium.common.exceptions import NoSuchElementException
 from .locators import ProductPageLocators
+from .locators import BasePageLocator
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -19,8 +20,15 @@ class BasePage:
         except NoSuchElementException:
             return False
         return True
+    # //////////////////////////////////////// Перенесено из main_page так как много где применяется
+    def go_login_page(self):
+        login_link = self.browser.find_element(*BasePageLocator.LOGIN_LINK)
+        login_link.click()
 
-# //////////////////////////////////////////////// Проверка что элемент не пресутствует
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocator.LOGIN_LINK)
+
+    # //////////////////////////////////////////////// Проверка что элемент отсутствует
     def is_not_element_present(self, how, what, timeout=4):
         try:
             WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located((how, what)))
@@ -41,3 +49,4 @@ class BasePage:
             return False
 
         return True
+
