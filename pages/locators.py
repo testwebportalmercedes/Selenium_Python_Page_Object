@@ -18,3 +18,6 @@ class ProductPageLocators:
     PRICE_BEFORE_ADD = (By.XPATH, './/*[@class="price_color"]')
     PRICE_AFTER_ADD = (By.XPATH, './/*[@class="alertinner "]/p/strong')
 
+class BasePageLocator:
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
