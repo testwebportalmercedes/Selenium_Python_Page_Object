@@ -22,4 +22,9 @@ class BasePageLocator:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
 
+class BasketPageLocator:
+    GO_TO_BACKET = (By.XPATH, '//*[@id="default"]/header/div[1]/div/div[2]/span/a')
+    PRICE_IN_BACKET = (By.XPATH, './/*[@class="price_color align-right"]')
+    BASKET_IS_EMPTY = (By.XPATH, './/*[@id="content_inner"]')
+
 

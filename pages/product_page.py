@@ -21,3 +21,6 @@ class ProductPage(BasePage):
 
         assert price_before == price_after
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.NAME_AFTER_ADD), \
+            "Success message is presented, but should not be"
