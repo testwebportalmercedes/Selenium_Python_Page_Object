@@ -57,4 +57,8 @@ class BasePage:
 
         return True
 
+    # //////////////////////////////////////////////// Проверка что регистрация успешна
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocator.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
 

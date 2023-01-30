@@ -10,6 +10,8 @@ class LogonPageLocators:
 
     LOGIN_EMAIL = (By.CSS_SELECTOR, "#id_login-username")
     LOGIN_PAROL = (By.CSS_SELECTOR, "#id_login-password")
+    LOGIN_BUTTON = (By.XPATH, '//*[@name="login_submit"]')
+    REGISTER_BUTTON = (By.XPATH, '//*[@name="registration_submit"]')
 
 class ProductPageLocators:
     ADD_IN_BACKET = (By.XPATH, './/*[@value="Добавить в корзину"]')
@@ -21,6 +23,9 @@ class ProductPageLocators:
 class BasePageLocator:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
+
 
 class BasketPageLocator:
     GO_TO_BACKET = (By.XPATH, '//*[@id="default"]/header/div[1]/div/div[2]/span/a')
