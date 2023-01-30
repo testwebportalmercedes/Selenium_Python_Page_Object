@@ -1,6 +1,7 @@
 from .base_page import BasePage
-
+import time
 from .locators import LogonPageLocators
+from .locators import BasePageLocator
 
 
 class LoginPage(BasePage):
@@ -22,3 +23,13 @@ class LoginPage(BasePage):
             *LogonPageLocators.REGISTER_PAROL_1), 'Selectors for REGISTER_PAROL_1 is not prezent'
         assert self.is_element_present(
             *LogonPageLocators.REGISTER_PAROL_2), 'Selectors for REGISTER_PAROL_2 is not prezent'
+
+    # ////////////////////////// Регистрация
+    def register_new_user(self):
+        self.browser.find_element(*BasePageLocator.LOGIN_LINK).click()
+        self.browser.find_element(*LogonPageLocators.REGISTER_EMAIL).send_keys(str(time.time()) + "@fakemail.org")
+        self.browser.find_element(*LogonPageLocators.REGISTER_PAROL_1).send_keys('cjkYWT2236332')
+        self.browser.find_element(*LogonPageLocators.REGISTER_PAROL_2).send_keys('cjkYWT2236332')
+        self.browser.find_element(*LogonPageLocators.REGISTER_BUTTON).click()
+
+
